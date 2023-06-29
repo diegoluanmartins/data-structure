@@ -1,18 +1,19 @@
-## Getting Started
+# Estrutura de dados com Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Repositório referente ao curso de [Estrutura de dados com Java](https://loiane.training/curso/estrutura-de-dados) ministrado pela [Loiane Groner](https://www.linkedin.com/in/loiane/)
 
-## Folder Structure
+## Estrutura do projetos
 
-The workspace contains two folders by default, where:
+Esse projeto tem uma estrutura simples de pastas
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `src`: pasta para manter os recursos desenvolvidos
+- `lib`: pasta para manter as dependências/bibliotecas.
+- `bin`: pasta para manter o código compilado.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+> A atualização da estrutura de pastas, usando VS Code, deve ser feita em: `.vscode/settings.json`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Estrutura de packages e classes
 
-## Dependency Management
+Os elementos contidos em `src` estãop guardados nos *packages* `com.capiroto.datastructure.*datastructureelement*`, onde \**datastructureelement*\* representa o elemento de estrutura de dados desenvolvido.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Os testes das aulas estão dentro do *package* `com.capiroto.datastructure.*datastructureelement*.test`.
