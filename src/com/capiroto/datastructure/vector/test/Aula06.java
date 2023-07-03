@@ -10,6 +10,7 @@ public class Aula06 {
         vector.add("capiroto3");
 
         System.out.println(vector.get("capiroto1"));
+        System.out.println(vector.get("capiroto666"));
     }
 
 }

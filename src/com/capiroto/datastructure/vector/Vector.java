@@ -38,13 +38,29 @@ public class Vector {
         return false;
     }
 
+    public boolean add(String element, int pos){
+        if !(this.isValidPosition(pos)){
+            throw new IllegalArgumentException("Invalid position");
+        }
+        if (pos == this.size - 1){
+            return false;
+        }
+        for (int i = this.size - 1; i >= pos; i--){
+            this.elements[i+1] = this.elements[i];
+        }
+        this.elements[pos] = element;
+        this.size++;
+        return true;
+    }
+
     public int size() {
         return this.size;
     }
 
     public String get(int pos) {
-        if (pos > size - 1 || pos < 0)
+        if !(this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
+        }
         return elements[pos];
     }
 
@@ -73,6 +89,10 @@ public class Vector {
         s.append("]");
 
         return s.toString();
+    }
+
+    private boolean isValidPosition(int pos){
+        return !(pos > this.size - 1 || pos < 0);
     }
 
 }
