@@ -30,6 +30,7 @@ public class Vector {
     // }
 
     public boolean add(String element) {
+        increaseCapacity();
         if (size < this.elements.length) {
             this.elements[size] = element;
             this.size++;
@@ -39,6 +40,7 @@ public class Vector {
     }
 
     public boolean add(String element, int pos){
+        increaseCapacity();
         if !(this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
@@ -73,11 +75,32 @@ public class Vector {
         return -1;
     }
 
+    public boolean remove(int pos){
+        if !(this.isValidPosition(pos)){
+            throw new IllegalArgumentException("Invalid position");
+        }
+        for (int i = pos; i < this.size - 1; i++){
+            this.elements[i] = this.elements[i+1]
+        }
+        this.tamanho--;
+        return true;
+    }
+
+    public boolean remove(String element){
+        int pos = this.get(element);
+        if (pos > -1){
+            this.remove(pos)
+            return true;
+        } else {
+            return false;
+        }
+    }    
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append("[");
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < this.size - 1; i++) {
             s.append(this.elements[i]);
             s.append(", ");
         }
@@ -93,6 +116,16 @@ public class Vector {
 
     private boolean isValidPosition(int pos){
         return !(pos > this.size - 1 || pos < 0);
+    }
+
+    private void increaseCapacity(){
+        if (this.size = this.elements.length){
+            String[] newElements = new String[this.elements.length * 2];
+            for(int i=0; i<this.size; i++){
+                newElements[i] = this.elements[i];
+            }
+            this.elements = newElements;
+        }
     }
 
 }
