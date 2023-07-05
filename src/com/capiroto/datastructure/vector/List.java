@@ -1,8 +1,8 @@
 package com.capiroto.datastructure.vector;
 
-public class Vector {
+public class List<T> {
 
-    private Object[] elements;
+    private T[] elements;
     private int size;
 
     public Vector(int size) {

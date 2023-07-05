@@ -2,15 +2,34 @@ package com.capiroto.datastructure.vector;
 
 public class Vector {
 
-    private Object[] elements;
+    private String[] elements;
     private int size;
 
     public Vector(int size) {
-        this.elements = new Object[size];
+        this.elements = new String[size];
         this.size = 0;
     }
 
-    public boolean add(Object element) {
+    // public void add(String element){
+    // for(int i=0; i < this.elements.length; i++){
+    // if(this.elements[i] == null){
+    // this.elements[i] = element;
+    // break;
+    // }
+    // }
+    // }
+
+    // public void add(String element) throws Exception{
+    // if (size < this.elements.length){
+    // this.elements[size] = element;
+    // this.size++;
+    // }
+    // else{
+    // throw new Exception("out of bounds");
+    // }
+    // }
+
+    public boolean add(String element) {
         increaseCapacity();
         if (size < this.elements.length) {
             this.elements[size] = element;
@@ -20,7 +39,7 @@ public class Vector {
         return false;
     }
 
-    public boolean add(Object element, int pos){
+    public boolean add(String element, int pos){
         increaseCapacity();
         if !(this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
@@ -40,14 +59,14 @@ public class Vector {
         return this.size;
     }
 
-    public Object get(int pos) {
+    public String get(int pos) {
         if !(this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         return elements[pos];
     }
 
-    public int get(StObjectring obj) {
+    public int get(String obj) {
         for (int i = 0; i < this.elements.length; i++) {
             if (obj.equals(this.elements[i])) {
                 return i;
@@ -67,7 +86,7 @@ public class Vector {
         return true;
     }
 
-    public boolean remove(Object element){
+    public boolean remove(String element){
         int pos = this.get(element);
         if (pos > -1){
             this.remove(pos)
@@ -101,7 +120,7 @@ public class Vector {
 
     private void increaseCapacity(){
         if (this.size = this.elements.length){
-            Object[] newElements = new Object[this.elements.length * 2];
+            String[] newElements = new String[this.elements.length * 2];
             for(int i=0; i<this.size; i++){
                 newElements[i] = this.elements[i];
             }
