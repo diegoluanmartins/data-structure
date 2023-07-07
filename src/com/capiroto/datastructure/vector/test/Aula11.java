@@ -21,6 +21,7 @@ public class Aula06 {
 
         list.add("a");
         list.add("b");
+        list.add("b");
 
     }
 

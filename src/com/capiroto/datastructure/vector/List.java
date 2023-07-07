@@ -5,12 +5,17 @@ public class List<T> {
     private T[] elements;
     private int size;
 
-    public Vector(int size) {
-        this.elements = new Object[size];
+    public List(int size) {
+        this.elements = (T[]) new Object[size];
+        this.size = 0;
+    }
+    
+    public List(int size, Class<T> classType) {
+        this.elements = (T[]) Array.newInstance(classType, size);
         this.size = 0;
     }
 
-    public boolean add(Object element) {
+    public boolean add(T element) {
         increaseCapacity();
         if (size < this.elements.length) {
             this.elements[size] = element;
@@ -20,7 +25,7 @@ public class List<T> {
         return false;
     }
 
-    public boolean add(Object element, int pos){
+    public boolean add(T element, int pos){
         increaseCapacity();
         if !(this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
@@ -47,7 +52,7 @@ public class List<T> {
         return elements[pos];
     }
 
-    public int get(StObjectring obj) {
+    public int get(T obj) {
         for (int i = 0; i < this.elements.length; i++) {
             if (obj.equals(this.elements[i])) {
                 return i;
@@ -67,7 +72,7 @@ public class List<T> {
         return true;
     }
 
-    public boolean remove(Object element){
+    public boolean remove(T element){
         int pos = this.get(element);
         if (pos > -1){
             this.remove(pos)
@@ -101,7 +106,7 @@ public class List<T> {
 
     private void increaseCapacity(){
         if (this.size = this.elements.length){
-            Object[] newElements = new Object[this.elements.length * 2];
+            T[] newElements = (T[]) new Object[this.elements.length * 2];
             for(int i=0; i<this.size; i++){
                 newElements[i] = this.elements[i];
             }
