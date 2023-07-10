@@ -2,7 +2,7 @@ package com.capiroto.datastructure.vector.test;
 
 import com.capiroto.datastructure.vector.Vector;
 
-public class Aula06 {
+public class Aula08 {
     public static void main(String[] args) {
         Vector vector = new Vector(3);
         vector.add("capirotoB");

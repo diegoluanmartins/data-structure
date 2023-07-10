@@ -1,13 +1,12 @@
 package com.capiroto.datastructure.vector.test;
 
-import com.capiroto.datastructure.vector.Vector;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aula06 {
+public class Aula12 {
     public static void main(String[] args) {
 
-        ArrayList<String> vector = new List<String>();
+        List<String> vector = new ArrayList<String>();
         vector.add("capirotoB");
         vector.add("capirotoC");
         vector.add("capirotoF"); 

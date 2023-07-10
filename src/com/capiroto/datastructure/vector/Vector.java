@@ -22,7 +22,7 @@ public class Vector {
 
     public boolean add(Object element, int pos){
         increaseCapacity();
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         if (pos == this.size - 1){
@@ -41,13 +41,13 @@ public class Vector {
     }
 
     public Object get(int pos) {
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         return elements[pos];
     }
 
-    public int get(StObjectring obj) {
+    public int get(Object obj) {
         for (int i = 0; i < this.elements.length; i++) {
             if (obj.equals(this.elements[i])) {
                 return i;
@@ -57,20 +57,20 @@ public class Vector {
     }
 
     public boolean remove(int pos){
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         for (int i = pos; i < this.size - 1; i++){
-            this.elements[i] = this.elements[i+1]
+            this.elements[i] = this.elements[i+1];
         }
-        this.tamanho--;
+        this.size--;
         return true;
     }
 
     public boolean remove(Object element){
         int pos = this.get(element);
         if (pos > -1){
-            this.remove(pos)
+            this.remove(pos);
             return true;
         } else {
             return false;
@@ -100,7 +100,7 @@ public class Vector {
     }
 
     private void increaseCapacity(){
-        if (this.size = this.elements.length){
+        if (this.size == this.elements.length){
             Object[] newElements = new Object[this.elements.length * 2];
             for(int i=0; i<this.size; i++){
                 newElements[i] = this.elements[i];

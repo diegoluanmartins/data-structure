@@ -1,11 +1,11 @@
 package com.capiroto.datastructure.vector;
 
-public class Vector {
+public class VectorString {
 
     private String[] elements;
     private int size;
 
-    public Vector(int size) {
+    public VectorString(int size) {
         this.elements = new String[size];
         this.size = 0;
     }
@@ -41,7 +41,7 @@ public class Vector {
 
     public boolean add(String element, int pos){
         increaseCapacity();
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         if (pos == this.size - 1){
@@ -60,7 +60,7 @@ public class Vector {
     }
 
     public String get(int pos) {
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         return elements[pos];
@@ -76,20 +76,20 @@ public class Vector {
     }
 
     public boolean remove(int pos){
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         for (int i = pos; i < this.size - 1; i++){
-            this.elements[i] = this.elements[i+1]
+            this.elements[i] = this.elements[i+1];
         }
-        this.tamanho--;
+        this.size--;
         return true;
     }
 
     public boolean remove(String element){
         int pos = this.get(element);
         if (pos > -1){
-            this.remove(pos)
+            this.remove(pos);
             return true;
         } else {
             return false;
@@ -119,7 +119,7 @@ public class Vector {
     }
 
     private void increaseCapacity(){
-        if (this.size = this.elements.length){
+        if (this.size == this.elements.length){
             String[] newElements = new String[this.elements.length * 2];
             for(int i=0; i<this.size; i++){
                 newElements[i] = this.elements[i];

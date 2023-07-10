@@ -1,11 +1,13 @@
 package com.capiroto.datastructure.vector;
 
+import java.lang.reflect.Array;
+
 public class List<T> {
 
     private T[] elements;
     private int size;
 
-    public List(int size) {
+    public List() {
         this.elements = (T[]) new Object[size];
         this.size = 0;
     }
@@ -27,7 +29,7 @@ public class List<T> {
 
     public boolean add(T element, int pos){
         increaseCapacity();
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         if (pos == this.size - 1){
@@ -46,7 +48,7 @@ public class List<T> {
     }
 
     public Object get(int pos) {
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         return elements[pos];
@@ -62,20 +64,20 @@ public class List<T> {
     }
 
     public boolean remove(int pos){
-        if !(this.isValidPosition(pos)){
+        if (!this.isValidPosition(pos)){
             throw new IllegalArgumentException("Invalid position");
         }
         for (int i = pos; i < this.size - 1; i++){
-            this.elements[i] = this.elements[i+1]
+            this.elements[i] = this.elements[i+1];
         }
-        this.tamanho--;
+        this.size--;
         return true;
     }
 
     public boolean remove(T element){
         int pos = this.get(element);
         if (pos > -1){
-            this.remove(pos)
+            this.remove(pos);
             return true;
         } else {
             return false;
@@ -105,7 +107,7 @@ public class List<T> {
     }
 
     private void increaseCapacity(){
-        if (this.size = this.elements.length){
+        if (this.size == this.elements.length){
             T[] newElements = (T[]) new Object[this.elements.length * 2];
             for(int i=0; i<this.size; i++){
                 newElements[i] = this.elements[i];
