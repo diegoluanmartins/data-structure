@@ -1,20 +1,28 @@
 package com.capiroto.datastructure.vector;
 
-import java.lang.reflect.Array;
+
 
 public class List<T> {
+    
 
     private T[] elements;
-    private int size;
+    private int size = 0;
+
+    private static final Object[] EMPTY_ELEMENTDATA = {};
 
     public List() {
         this.elements = (T[]) new Object[size];
         this.size = 0;
     }
 
-    public List(int size, Class<T> classType) {
-        this.elements = (T[]) Array.newInstance(classType, size);
-        this.size = 0;
+    public List(int initialCapacity) {
+        if (initialCapacity > 0) {
+            this.elements = (T[]) new Object[initialCapacity];
+            this.size = initialCapacity;
+        } else{
+            this.elements = (T[]) EMPTY_ELEMENTDATA;
+            this.size = 0;
+        }
     }
 
     public boolean add(T element) {
@@ -68,6 +76,7 @@ public class List<T> {
             this.elements[i] = this.elements[i + 1];
         }
         this.size--;
+        this.elements[this.size] = null;
         return true;
     }
 
@@ -95,6 +104,12 @@ public class List<T> {
         return lastIndex;
     }
 
+    public boolean clear() {
+        this.elements = (T[]) new Object[0];
+        this.size = 0;
+        return true;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
@@ -119,7 +134,7 @@ public class List<T> {
 
     private void increaseCapacity() {
         if (this.size == this.elements.length) {
-            T[] newElements = (T[]) new Object[this.elements.length * 2];
+            T[] newElements = (T[]) new Object[(this.elements.length + 1) * 2];
             for (int i = 0; i < this.size; i++) {
                 newElements[i] = this.elements[i];
             }
