@@ -2,7 +2,7 @@ package com.capiroto.datastructure.vector;
 
 public class Exer06 {
     public static void main(String[] args) {
-        List<Contact> myList = new List<Contact>(20); 
+        CapirotoList<Contact> myList = new CapirotoList<Contact>(20); 
 
         
         for (int i = 0; i < 30; i++){

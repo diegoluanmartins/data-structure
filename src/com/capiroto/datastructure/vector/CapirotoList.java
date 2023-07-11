@@ -1,21 +1,18 @@
 package com.capiroto.datastructure.vector;
 
-
-
-public class List<T> {
+public class CapirotoList<T> {
     
-
     private T[] elements;
     private int size = 0;
 
     private static final Object[] EMPTY_ELEMENTDATA = {};
 
-    public List() {
+    public CapirotoList() {
         this.elements = (T[]) new Object[size];
         this.size = 0;
     }
 
-    public List(int initialCapacity) {
+    public CapirotoList(int initialCapacity) {
         if (initialCapacity > 0) {
             this.elements = (T[]) new Object[initialCapacity];
             this.size = initialCapacity;

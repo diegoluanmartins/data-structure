@@ -2,7 +2,7 @@ package com.capiroto.datastructure.vector;
 
 public class Exer02 {
     public static void main(String[] args) {
-        List<String> myList = new List<String>(); 
+        CapirotoList<String> myList = new CapirotoList<String>(); 
         myList.add("capirotoA");
         myList.add("capirotoB");
         myList.add("capirotoC");

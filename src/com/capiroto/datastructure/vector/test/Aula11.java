@@ -1,6 +1,6 @@
 package com.capiroto.datastructure.vector.test;
 
-import com.capiroto.datastructure.vector.List;
+import com.capiroto.datastructure.vector.CapirotoList;
 import com.capiroto.datastructure.vector.Vector;
 
 public class Aula11 {
@@ -18,7 +18,7 @@ public class Aula11 {
         vector.remove(3);
         System.out.println(vector.toString());
 
-        List<String> list = new List<String>();
+        CapirotoList<String> list = new CapirotoList<String>();
 
         list.add("a");
         list.add("b");
