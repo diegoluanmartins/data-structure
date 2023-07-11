@@ -1,4 +1,4 @@
-package com.capiroto.datastructure.vector;
+package com.capiroto.datastructure.vector.util;
 
 public class Contact {
 

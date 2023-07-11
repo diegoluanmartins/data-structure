@@ -1,4 +1,6 @@
-package com.capiroto.datastructure.vector;
+package com.capiroto.datastructure.vector.exercises;
+
+import com.capiroto.datastructure.vector.CapirotoList;
 
 public class Exer02 {
     public static void main(String[] args) {
