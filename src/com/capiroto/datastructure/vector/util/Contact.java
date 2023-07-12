@@ -24,5 +24,21 @@ public class Contact {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!this.name.equals(((Contact)obj).getName())){
+            return false;
+        }
+        if(!this.phoneNumber.equals(((Contact)obj).getPhoneNumber())){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + "]";
+    }
     
 }

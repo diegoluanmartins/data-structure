@@ -15,11 +15,10 @@ public class CapirotoList<T> {
     public CapirotoList(int initialCapacity) {
         if (initialCapacity > 0) {
             this.elements = (T[]) new Object[initialCapacity];
-            this.size = initialCapacity;
         } else{
             this.elements = (T[]) EMPTY_ELEMENTDATA;
-            this.size = 0;
         }
+        this.size = 0;
     }
 
     public boolean add(T element) {
@@ -110,17 +109,17 @@ public class CapirotoList<T> {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append("[");
+        s.append("[\n");
         for (int i = 0; i < this.size - 1; i++) {
             s.append(this.elements[i]);
-            s.append(", ");
+            s.append(", \n");
         }
 
         if (this.size > 0) {
             s.append(this.elements[this.size - 1]);
         }
 
-        s.append("]");
+        s.append("\n]");
 
         return s.toString();
     }
