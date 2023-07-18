@@ -1,12 +1,18 @@
-package com.capiroto.datastructure.base;
-public class StaticDataStructure<T> {
+package com.capiroto.datastructure.vector;
 
+public class CapirotoListOld<T> {
+    
     private T[] elements;
     private int size = 0;
 
     private static final Object[] EMPTY_ELEMENTDATA = {};
-    
-    public StaticDataStructure(int initialCapacity) {
+
+    public CapirotoListOld() {
+        this.elements = (T[]) new Object[size];
+        this.size = 0;
+    }
+
+    public CapirotoListOld(int initialCapacity) {
         if (initialCapacity > 0) {
             this.elements = (T[]) new Object[initialCapacity];
         } else{
@@ -14,19 +20,15 @@ public class StaticDataStructure<T> {
         }
         this.size = 0;
     }
-    
-    public StaticDataStructure() {
-        this(10);
-    }
 
-    protected boolean add(T element) {
+    public boolean add(T element) {
         increaseCapacity();
         this.elements[size] = element;
         this.size++;
         return true;
     }
 
-    protected boolean add(T element, int pos) {
+    public boolean add(T element, int pos) {
         increaseCapacity();
         if (!this.isValidPosition(pos)) {
             throw new IllegalArgumentException("Invalid position");
@@ -46,7 +48,14 @@ public class StaticDataStructure<T> {
         return this.size;
     }
 
-    protected int indexOf(T element) {
+    public Object get(int pos) {
+        if (!this.isValidPosition(pos)) {
+            throw new IllegalArgumentException("Invalid position");
+        }
+        return elements[pos];
+    }
+
+    public int indexOf(T element) {
         for (int i = 0; i < this.size; i++) {
             if (element.equals(this.elements[i])) {
                 return i;
@@ -81,46 +90,41 @@ public class StaticDataStructure<T> {
         return this.indexOf(element) > -1;
     }
 
-    protected int lastIndexOf(T element) {
+    public int lastIndexOf(T element) {
         int lastIndex = -1;
-        for (int i = this.size; i == 0; i--) {
+        for (int i = 0; i < this.size; i++) {
             if (element.equals(this.elements[i])) {
                 lastIndex = i;
-                break;
             }
         }
         return lastIndex;
     }
 
     public boolean clear() {
-        this.elements = (T[]) EMPTY_ELEMENTDATA;
+        this.elements = (T[]) new Object[0];
         this.size = 0;
         return true;
     }
 
-    public String toString(String additionalSeparator) {
+    @Override
+    public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append("[" + additionalSeparator);
+        s.append("[\n");
         for (int i = 0; i < this.size - 1; i++) {
             s.append(this.elements[i]);
-            s.append(", " + additionalSeparator);
+            s.append(", \n");
         }
 
         if (this.size > 0) {
             s.append(this.elements[this.size - 1]);
         }
 
-        s.append(additionalSeparator + "]");
+        s.append("\n]");
 
         return s.toString();
     }
 
-    @Override
-    public String toString() {
-        return this.toString("");
-    }
-
-    protected boolean isValidPosition(int pos) {
+    private boolean isValidPosition(int pos) {
         return !(pos > this.size - 1 || pos < 0);
     }
 
@@ -134,5 +138,4 @@ public class StaticDataStructure<T> {
         }
     }
 
-    
 }
