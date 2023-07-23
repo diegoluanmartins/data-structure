@@ -13,7 +13,7 @@ public class Exer05 {
             palindrome.push(s.substring(i, i + 1));
         }
         for (int i = s.length() / 2 + middle; i < s.length(); i++) {
-            if (s.substring(i, i + 1).equals(palindrome.pop()))
+            if (s.substring(i, i + 1).equalsIgnoreCase(palindrome.pop()))
                 continue;
             return false;
         }

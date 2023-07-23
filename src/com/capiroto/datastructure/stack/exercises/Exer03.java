@@ -1,7 +1,5 @@
 package com.capiroto.datastructure.stack.exercises;
 
-import java.util.List;
-
 import javax.naming.SizeLimitExceededException;
 
 import com.capiroto.datastructure.stack.CapirotoStack;
