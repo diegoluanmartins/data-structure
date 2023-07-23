@@ -1,8 +1,8 @@
 package com.capiroto.datastructure.base;
 public class StaticDataStructure<T> {
 
-    private T[] elements;
-    private int size = 0;
+    protected T[] elements;
+    protected int size = 0;
 
     private static final Object[] EMPTY_ELEMENTDATA = {};
     
@@ -103,6 +103,10 @@ public class StaticDataStructure<T> {
         this.elements = (T[]) EMPTY_ELEMENTDATA;
         this.size = 0;
         return true;
+    }
+
+    public boolean isEmpty(){
+        return this.size == 0;
     }
 
     public String toString(String additionalSeparator) {
