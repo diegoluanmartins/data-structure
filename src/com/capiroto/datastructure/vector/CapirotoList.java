@@ -27,10 +27,7 @@ public class CapirotoList<T> extends StaticDataStructure<T> {
     }
 
     public Object get(int pos) {
-        if (!this.isValidPosition(pos)) {
-            throw new IllegalArgumentException("Invalid position");
-        }
-        return elements[pos];
+        return super.get(pos);
     }
 
     public int indexOf(T element) {

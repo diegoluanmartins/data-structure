@@ -46,6 +46,13 @@ public class StaticDataStructure<T> {
         return this.size;
     }
 
+    protected Object get(int pos) {
+        if (!this.isValidPosition(pos)) {
+            throw new IllegalArgumentException("Invalid position");
+        }
+        return this.elements[pos];
+    }
+
     protected int indexOf(T element) {
         for (int i = 0; i < this.size; i++) {
             if (element.equals(this.elements[i])) {

@@ -12,11 +12,11 @@ public class Exer06 {
             myList.add(new Contact("Capiroto " + i, "666 669 " + i*3));
         }
 
-        System.out.println(myList.toString()); 
+        System.out.println(myList.toString("\n")); 
 
         //add
         myList.add(new Contact("Capiroto 666", "666 999 666"), 0);
-        System.out.println("add(element, pos) = " + myList.toString()); 
+        System.out.println("add(element, pos) = " + myList.toString("\n")); 
         
         //contains
         System.out.println("contains(Capiroto 1, 666 669 3) = " + myList.contains(new Contact("Capiroto 1", "666 669 3")));
@@ -32,9 +32,9 @@ public class Exer06 {
 
         //remove
         myList.remove(new Contact("Capiroto 1", "666 669 3"));
-        System.out.println("remove(Capiroto 1, 666 669 3) = " + myList.toString());
+        System.out.println("remove(Capiroto 1, 666 669 3) = " + myList.toString("\n"));
         myList.remove(6);
-        System.out.println("remove(6) = " + myList.toString());
+        System.out.println("remove(6) = " + myList.toString("\n"));
 
         //Clear
         myList.clear();
