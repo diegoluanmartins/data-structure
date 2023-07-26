@@ -14,6 +14,10 @@ Esse projeto tem uma estrutura simples de pastas
 
 ## Estrutura de packages e classes
 
-Os elementos contidos em `src` estãop guardados nos *packages* `com.capiroto.datastructure.*datastructureelement*`, onde \**datastructureelement*\* representa o elemento de estrutura de dados desenvolvido.
+Os elementos contidos em `src` estãop guardados nos *packages* `com.cprt.datastructure.*datastructureelement*`, onde \**datastructureelement*\* representa o elemento de estrutura de dados desenvolvido.
 
-Os testes das aulas estão dentro do *package* `com.capiroto.datastructure.*datastructureelement*.test`.
+Os testes das aulas estão dentro do *package* `com.cprt.datastructure.*datastructureelement*.test`.  
+
+Os exercícios das aulas estão dentro do *package* `com.cprt.datastructure.*datastructureelement*.exercises`.  
+
+Os objetos auxiliares das aulas estão dentro do *package* `com.cprt.datastructure.*datastructureelement*.util`.

@@ -28,7 +28,7 @@ public class Exer08 {
     }
 
     public static void main(String[] args) {
-        int[] decs = new int[] { 3};
+        int[] decs = new int[] { 4};
         for (int dec : decs) {
             Stack<Integer> source = new Stack<>();
             for(int i = dec; i >= 1; i-- ) {
