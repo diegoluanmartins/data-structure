@@ -18,10 +18,6 @@ public class CprtStack<T> extends StaticDataStructure<T> {
         super.add(element);
     }
 
-    public boolean isEmpty(){
-        return super.isEmpty();
-    }
-
     /*
      * WARNING!
      * .peek() and .pop() methods have different ways of
@@ -39,7 +35,7 @@ public class CprtStack<T> extends StaticDataStructure<T> {
     }
 
     public T pop(){
-        if (this.isEmpty()){
+        if (super.isEmpty()){
             return null;
         }
         return this.elements[--size];
