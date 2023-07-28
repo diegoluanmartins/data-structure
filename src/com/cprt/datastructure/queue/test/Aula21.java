@@ -2,7 +2,7 @@ package com.cprt.datastructure.queue.test;
 
 import com.cprt.datastructure.queue.CprtQueue;
 
-public class Aula19 {
+public class Aula21 {
 
     public static void main(String[] args){
 

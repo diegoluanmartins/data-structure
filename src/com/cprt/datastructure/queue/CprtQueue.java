@@ -5,6 +5,8 @@ import com.cprt.datastructure.base.StaticDataStructure;
 
 public class CprtQueue<T> extends StaticDataStructure<T> {
 
+    private static int POS = 0;
+
     public CprtQueue(){
         super();
     }
@@ -14,20 +16,21 @@ public class CprtQueue<T> extends StaticDataStructure<T> {
     }
 
     public void push(T element){
-        super.add(element);
+        this.add(element);
     }
 
     public T peek(){
         if(super.isEmpty()){
             throw new EmptyStackException();
         }
-        return this.elements[0];
+        return this.elements[POS];
     }
 
     public T remove(){
         T element = this.peek();
-        super.remove(0);
+        this.remove(POS);
         return element;
-    }  
+    }
+
     
 }

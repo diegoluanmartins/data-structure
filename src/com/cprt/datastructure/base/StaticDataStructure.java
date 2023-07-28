@@ -62,7 +62,7 @@ public class StaticDataStructure<T> {
         return -1;
     }
 
-    public boolean remove(int pos) {
+    protected boolean remove(int pos) {
         if (!this.isValidPosition(pos)) {
             throw new IllegalArgumentException("Invalid position");
         }
@@ -74,7 +74,7 @@ public class StaticDataStructure<T> {
         return true;
     }
 
-    public boolean remove(T element) {
+    protected boolean remove(T element) {
         int pos = this.indexOf(element);
         if (pos > -1) {
             this.remove(pos);

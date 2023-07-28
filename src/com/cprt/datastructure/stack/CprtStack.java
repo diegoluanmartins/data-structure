@@ -41,4 +41,12 @@ public class CprtStack<T> extends StaticDataStructure<T> {
         return this.elements[--size];
     }
 
+    public boolean remove(T element){
+        return super.remove(element);
+    }
+
+    public boolean remove(int pos){
+        return super.remove(pos);
+    }
+
 }

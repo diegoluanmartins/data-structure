@@ -1,18 +1,18 @@
 package com.cprt.datastructure.queue.test;
 
-import com.cprt.datastructure.queue.CprtQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class Aula19 {
+public class Aula23 {
 
     public static void main(String[] args){
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
 
-        CprtQueue<Integer> queue = new CprtQueue<Integer>();
+        System.out.println(queue);
 
-        queue.push(3);
-        queue.push(5);
-        queue.push(1);
-        queue.push(8);
-        
         System.out.println(queue.toString() + " = " + queue.size() + " elements");
 
         System.out.println("first element = " + queue.peek());
@@ -20,7 +20,6 @@ public class Aula19 {
         while(!queue.isEmpty()){
             System.out.println("removing from queue = " + queue.remove() + " - remaining = " + queue.toString());
         }
-
     }
     
 }
