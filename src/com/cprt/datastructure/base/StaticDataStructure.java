@@ -132,7 +132,7 @@ public class StaticDataStructure<T> {
     }
 
     protected boolean isValidPosition(int pos) {
-        return !(pos > this.size - 1 || pos < 0);
+        return (!(pos > this.size - 1 || pos < 0) || pos == 0);
     }
 
     private void increaseCapacity() {
