@@ -31,9 +31,9 @@ public class StaticDataStructure<T> {
         if (!this.isValidPosition(pos)) {
             throw new IllegalArgumentException("Invalid position");
         }
-        if (pos == this.size - 1) {
-            return false;
-        }
+        // if (pos == this.size - 1) {
+        //     return false;
+        // }
         for (int i = this.size - 1; i >= pos; i--) {
             this.elements[i + 1] = this.elements[i];
         }

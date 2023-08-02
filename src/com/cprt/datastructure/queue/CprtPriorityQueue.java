@@ -5,16 +5,17 @@ public class CprtPriorityQueue<T> extends CprtQueue<T> {
     public void push(T element) {
         Comparable<T> key = (Comparable<T>) element;
         int i;
-        if (this.size() == 0) {
-            i = 0;
-        } else {
-            for (i = this.size(); i > 0; i--) {
-                if (key.compareTo(this.elements[i-1]) >= 0) {
-                    break;
-                }
+        for (i = super.size() - 1; i >= 0; i--) {
+            if (key.compareTo(super.elements[i]) >= 0) {
+                break;
             }
         }
-        super.add(element, i);
+        i++;
+        if (i == super.size()) {
+            super.add(element);
+        } else {
+            super.add(element, i);
+        }
     }
 
 }
