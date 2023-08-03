@@ -2,7 +2,7 @@ package com.cprt.datastructure.queue;
 
 public class CprtPriorityQueue<T> extends CprtQueue<T> {
 
-    public void push(T element) {
+    public boolean add(T element) {
         Comparable<T> key = (Comparable<T>) element;
         int i;
         for (i = super.size() - 1; i >= 0; i--) {
@@ -12,9 +12,9 @@ public class CprtPriorityQueue<T> extends CprtQueue<T> {
         }
         i++;
         if (i == super.size()) {
-            super.add(element);
+            return super.add(element);
         } else {
-            super.add(element, i);
+            return super.add(element, i);
         }
     }
 

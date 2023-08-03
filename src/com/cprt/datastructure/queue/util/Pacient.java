@@ -1,4 +1,4 @@
-package com.cprt.datastructure.queue;
+package com.cprt.datastructure.queue.util;
 
 public class Pacient implements Comparable<Pacient> {
 
@@ -31,13 +31,13 @@ public class Pacient implements Comparable<Pacient> {
 
     @Override
     public int compareTo(Pacient o) {
-        
-        if(this.priority > o.getPriority()){
-            return 1;
-        } else if (this.priority < o.getPriority()){
-            return -1;
-        }
-        return 0;
+        return Integer.valueOf(this.priority).compareTo(o.getPriority());
+        // if(this.priority > o.getPriority()){
+        //     return 1;
+        // } else if (this.priority < o.getPriority()){
+        //     return -1;
+        // }
+        // return 0;
     }
 
     @Override

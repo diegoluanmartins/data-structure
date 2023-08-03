@@ -15,20 +15,20 @@ public class CprtQueue<T> extends StaticDataStructure<T> {
         super(initialCapacity);
     }
 
-    public void push(T element){
-        this.add(element);
+    public boolean add(T element){
+        return super.add(element);
     }
 
     public T peek(){
         if(super.isEmpty()){
             throw new EmptyStackException();
         }
-        return this.elements[POS];
+        return super.elements[POS];
     }
 
     public T remove(){
         T element = this.peek();
-        this.remove(POS);
+        super.remove(POS);
         return element;
     }
 

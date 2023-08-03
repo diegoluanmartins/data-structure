@@ -8,10 +8,10 @@ public class Aula19 {
 
         CprtQueue<Integer> queue = new CprtQueue<Integer>();
 
-        queue.push(3);
-        queue.push(5);
-        queue.push(1);
-        queue.push(8);
+        queue.add(3);
+        queue.add(5);
+        queue.add(1);
+        queue.add(8);
         
         System.out.println(queue.toString() + " = " + queue.size() + " elements");
 
