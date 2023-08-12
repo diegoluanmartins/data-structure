@@ -4,13 +4,6 @@ import java.util.Stack;
 
 public class Exer08 {
 
-    public static String convertDecToBinary(Integer num) {
-        if (num <= 1) {
-            return num.toString();
-        }
-        return convertDecToBinary(Math.floorDiv(num, 2)) + num % 2;
-    }
-
     public static Stack<Integer> getMinimumHanoiMovements(Integer n, Stack<Integer> source, Stack<Integer> dest,
             Stack<Integer> passing) {
 
