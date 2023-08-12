@@ -22,11 +22,11 @@ public class Exer07 {
             num = division;
         }
         binStack.push(num.toString());
-        String binVal = "";
+        StringBuilder binVal = new StringBuilder();
         while (!binStack.isEmpty()) {
-            binVal = binVal + binStack.pop();
+            binVal.append(binStack.pop());
         }
-        return binVal;
+        return binVal.toString();
     }
 
     public static void main(String[] args) throws SizeLimitExceededException {
